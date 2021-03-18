@@ -4,9 +4,10 @@
 
 ## How to use
 
-- git clone `git@github.com:rendystdy/fluttern-meals-app.git` in the terminal
-- Run `cd fluttern-meals-app`
-- Run flutter run in terminal
+- git clone `git@github.com:rendystdy/flutter_myshop.git` in the terminal
+- cd`fluttern-meals-app`
+- Run `flutter packages get` in terminal
+- Run `flutter run` in terminal
 
 This project is a starting point for a Flutter application.
 
