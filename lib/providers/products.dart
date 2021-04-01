@@ -53,13 +53,13 @@ class Products with ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  void addProduct(Product product) async {
+  Future<void> addProduct(Product product) async {
     // final url = Uri.https(
     //     'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com',
     //     '/products.json');
     var url = Uri.parse(
         'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com/products.json');
-    http
+    return http
         .post(
       url,
       body: json.encode({
