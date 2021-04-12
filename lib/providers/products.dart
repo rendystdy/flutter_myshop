@@ -56,10 +56,10 @@ class Products with ChangeNotifier {
 
   Future<void> addProduct(Product product) async {
     // final url = Uri.https(
-    //     'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com',
+    //     'https://my-shop-e1c79-default-rtdb.firebaseio.com',
     //     '/products.json');
     var url = Uri.parse(
-        'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com/products.json');
+        'https://my-shop-e1c79-default-rtdb.firebaseio.com/products.json');
     // return http
     //     .post(
     //   url,
@@ -119,7 +119,7 @@ class Products with ChangeNotifier {
     final prodIndex = _items.indexWhere((prod) => prod.id == id);
     if (prodIndex >= 0) {
       final url = Uri.parse(
-          'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com/products/$id.json');
+          'https://my-shop-e1c79-default-rtdb.firebaseio.com/products/$id.json');
       try {
         final response = await http.patch(
           url,
@@ -141,7 +141,7 @@ class Products with ChangeNotifier {
 
   Future<void> deleteProduct(String id) async {
     final url = Uri.parse(
-        'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com/products/$id.json');
+        'https://my-shop-e1c79-default-rtdb.firebaseio.com/products/$id.json');
     final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
     var existingProduct = _items[existingProductIndex];
     _items.removeAt(existingProductIndex);
@@ -160,7 +160,7 @@ class Products with ChangeNotifier {
 
   Future<void> fetchAndSetProducts() async {
     var url = Uri.parse(
-        'https://flutter-my-shop-2466c-default-rtdb.firebaseio.com/products.json');
+        'https://my-shop-e1c79-default-rtdb.firebaseio.com/products.json');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
